@@ -1,0 +1,29 @@
+{
+  "name": "pasture",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Faktu Sales Copilot — internal CRM agent for the Faktu sales team. (Also a red-team target: see ./red-team.)",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6"
+  },
+  "scripts": {
+    "start": "node src/main.ts",
+    "dev": "node --watch src/main.ts",
+    "reset": "node src/reset.ts",
+    "typecheck": "tsc --noEmit",
+    "poc": "bash poc/run-all.sh",
+    "poc:1": "node poc/poc-01-no-action-plane.ts",
+    "poc:2": "node poc/poc-02-indirect-injection-email.ts",
+    "poc:3": "node poc/poc-03-guardrail-bypass.ts",
+    "poc:4": "node poc/poc-04-pii-in-args.ts",
+    "poc:5": "node poc/poc-05-cross-session-memory.ts",
+    "poc:6": "node poc/poc-06-fetch-url-injection.ts",
+    "poc:7": "node poc/poc-07-no-idempotence.ts",
+    "poc:8": "node poc/poc-08-unauth-readback.ts"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0",
+    "@types/node": "^22.0.0"
+  }
+}
